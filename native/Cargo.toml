@@ -1,0 +1,13 @@
+[package]
+name = "honey-badger-cli"
+version = "0.0.1"
+authors = ["Matthias Thoemmes <git@gmx.org>"]
+license = "MIT"
+
+[lib]
+name = "honey_badger_cli"
+crate-type = ["dylib"]
+
+[dependencies]
+neon = "0.1"
+badger = "0.1.0"

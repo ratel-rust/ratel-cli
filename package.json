@@ -1,0 +1,14 @@
+{
+  "name": "honey-badger-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "author": "Matthias Thoemmes <git@gmx.org>",
+  "license": "MIT",
+  "dependencies": {
+    "neon-cli": "^0.1.7"
+  },
+  "scripts": {
+    "install": "neon build"
+  }
+}
