@@ -6,6 +6,7 @@
   "author": "Matthias Thoemmes <git@gmx.org>",
   "license": "MIT",
   "dependencies": {
+    "minimist": "^1.2.0",
     "neon-cli": "^0.1.7"
   },
   "scripts": {
