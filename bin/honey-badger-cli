@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const argv = require('minimist')((process.argv.slice(2)));
+const Badger = require('..');
+const instance = new Badger();
+
+const options = {
+  help: !!(argv.h || argv.help),
+  file: argv.f || argv.file,
+  string: argv.e || argv.string,
+  output: argv.o || argv.output,
+  version: !!(argv.version || argv.v),
+  pretty: !!argv.pretty,
+  ast: !!argv.ast
+};
+
+if (options.version) {
+  process.stdout.write(instance.getVersion());
+  process.exit(0);
+}
+
+if (typeof options.file === 'string' || typeof options.string === 'string') {
+  const result = instance.process(options);
+  if (typeof result === 'string') {
+    process.stdout.write(result);
+  }
+  process.exit(0);
+}
+
+process.stdout.write(instance.getUsage());
+process.exit(0);

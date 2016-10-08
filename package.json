@@ -1,15 +1,22 @@
 {
   "name": "honey-badger-cli",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "A command-line interface for HoneyBadger, a WIP ES2015+ to ES5 transpiler + bundler + minifier in Rust",
   "main": "lib/index.js",
   "author": "Matthias Thoemmes <git@gmx.org>",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0",
-    "neon-cli": "^0.1.7"
+    "mocha": "^3.1.0",
+    "neon-cli": "^0.1.7",
+    "semistandard": "^9.0.0"
   },
   "scripts": {
-    "install": "neon build"
+    "install": "neon build",
+    "test": "neon build && mocha",
+    "semistandard": "semistandard bin/honey-badger-cli lib/**.js test/**.js"
+  },
+  "bin": {
+    "honey-badger-cli": "bin/honey-badger-cli"
   }
 }

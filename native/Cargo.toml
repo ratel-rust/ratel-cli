@@ -10,4 +10,7 @@ crate-type = ["dylib"]
 
 [dependencies]
 neon = "0.1"
-badger = "0.1.0"
+badger = "0.2.0"
+
+#[dependencies.badger]
+#path = "../../HoneyBadger"
