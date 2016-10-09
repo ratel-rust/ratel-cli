@@ -57,11 +57,11 @@ import Badger from 'honey-badger-cli';
 const instance = new Badger();
 
 ````
-### instance.printVersion()
+### instance.getVersion()
 
 Returns a string containing the application's version.
 
-### instance.printUsage()
+### instance.getUsage()
 
 Returns a string containing usage information.
 
@@ -94,6 +94,12 @@ When *minify* is set to true, the output string will be minified.
 Returns a *String* with the AST of the given input string.
 
 ## Changelog
+
+0.0.3
+
+  - Updating to HoneyBadger 0.2.1
+  - Updating documentation
+  - Ensuring a trailing newline using -e/--string
 
 0.0.2
 

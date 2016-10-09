@@ -1,6 +1,6 @@
 {
   "name": "honey-badger-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A command-line interface for HoneyBadger, a WIP ES2015+ to ES5 transpiler + bundler + minifier in Rust",
   "main": "lib/index.js",
   "author": "Matthias Thoemmes <git@gmx.org>",

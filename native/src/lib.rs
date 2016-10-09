@@ -10,7 +10,7 @@ fn transform(call: Call) -> JsResult<JsString> {
   let scope = call.scope;
 
   let source = match call.arguments.get(scope, 0).unwrap().variant() {
-      Variant::String(handle) => handle.value(),
+      Variant::String(handle) => handle.value() + "\n",
       _                       => panic!("First argument must be a string"),
   };
 
