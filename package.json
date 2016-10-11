@@ -14,7 +14,7 @@
   "scripts": {
     "install": "neon build",
     "test": "neon build && mocha",
-    "semistandard": "semistandard bin/honey-badger-cli lib/**.js test/**.js"
+    "semistandard": "semistandard bin/ratel lib/**.js test/**.js"
   },
   "bin": {
     "ratel": "bin/ratel"
