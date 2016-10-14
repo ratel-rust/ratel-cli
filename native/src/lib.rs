@@ -1,10 +1,10 @@
 #[macro_use]
 extern crate neon;
-extern crate badger;
+extern crate ratel;
 
 use neon::vm::{Call, JsResult};
 use neon::js::{JsString, Variant};
-use badger::{parser, transformer, codegen};
+use ratel::{parser, transformer, codegen};
 
 fn transform(call: Call) -> JsResult<JsString> {
   let scope = call.scope;

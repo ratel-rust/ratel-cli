@@ -1,13 +1,12 @@
-# honey-badger-cli
+# ratel
 
-A command-line interface for [HoneyBadger](https://github.com/HoneyBadger-rust),
-a WIP ES2015+ to ES5 transpiler + bundler + minifier in Rust.
+A command-line interface for [ratel-core](https://github.com/ratel-rust/ratel-core), a JavaScript compiler core written in Rust.
 
 ## Usage
 
 ````bash
-honey-badger-cli [options]
-honey-badger-cli --version
+ratel [options]
+ratel --version
 
 Options:
   -h --help                       Show this screen.
@@ -23,12 +22,12 @@ Options:
 ## Installing as cli executable
 
 You can install the executable globally from NPM using
-``npm install -g honey-badger-cli`` or by executing ``npm link`` in the project
+``npm install -g ratel`` or by executing ``npm link`` in the project
 directory.
 
 ## Running the tests
 
-Recompiles HoneyBadger and runs all tests using [Mocha](https://mochajs.org).
+Recompiles ratel and runs all tests using [Mocha](https://mochajs.org).
 
 The test suite is using [node.green](http://node.green/)'s compat-table which
 features ES2015, ES2016 and ES2017 examples.
@@ -42,19 +41,19 @@ $ npm test
 Execute ``make`` in the project directory. Please also refer to the scripts
 section of ``package.json``.
 
-In case you want to work on a local copy of [HoneyBadger](https://github.com/HoneyBadger-rust),
+In case you want to work on a local copy of [ratel-core](https://github.com/ratel-rust),
 add the following lines to ``native/Cargo.toml``:
 
 ````
-[dependencies.badger]
-path = "../../HoneyBadger"
+[dependencies.ratel]
+path = "../../ratel"
 ````
 
-## Programmatic usage
+## API
 
 ````js
-import Badger from 'honey-badger-cli';
-const instance = new Badger();
+import Ratel from 'ratel';
+const instance = new Ratel();
 
 ````
 ### instance.getVersion()
@@ -78,22 +77,29 @@ Transpiles the given input, returns optionally a string.
 | output | String  | Output path.                |
 | string | String  | Input string.               |
 
-### instance.badger
+### instance.ratel
 
-Allows access to the rust module implementing the following methods:
+Reference to the rust module implementing the following methods:
 
-#### instance.badger.transform(*String* string, *Boolean* minify)
+#### instance.transform(*String* string, *Boolean* minify)
 
 Returns a string.
 
 Transforms the given input string into ES5 code.
 When *minify* is set to true, the output string will be minified.
 
-#### instance.badger.parse(*String* string)
+#### instance.parse(*String* string)
 
 Returns a *String* with the AST of the given input string.
 
 ## Changelog
+
+0.0.4
+
+  - Renaming to ratel
+  - Updating to ratel-core 0.2.3
+  - Updating documentation
+  - Updating project dependencies
 
 0.0.3
 

@@ -1,15 +1,15 @@
 {
   "name": "ratel",
-  "version": "1.0.1",
-  "description": "A command-line interface for HoneyBadger, a WIP ES2015+ to ES5 transpiler + bundler + minifier in Rust",
+  "version": "0.0.4",
+  "description": "A command-line interface for ratel-core, a JavaScript compiler core in Rust.",
   "main": "lib/index.js",
   "author": "Matthias Thoemmes <git@gmx.org>",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0",
-    "mocha": "^3.1.0",
+    "mocha": "^3.1.2",
     "neon-cli": "^0.1.7",
-    "semistandard": "^9.0.0"
+    "semistandard": "^9.1.0"
   },
   "scripts": {
     "install": "neon build",

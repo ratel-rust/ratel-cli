@@ -1,6 +1,6 @@
-/* global RUST_BACKTRACE, describe, it, Badger, requireRelativePath */
+/* global RUST_BACKTRACE, describe, it, Ratel, requireRelativePath */
 
-describe('node-compat-table-testers', () => {
+describe('can parse node-compat-table-testers', () => {
   const testers = requireRelativePath('contrib', 'node-compat-table-testers.json');
   Object.keys(testers).forEach((suiteName) => {
     const tests = testers[suiteName];
@@ -12,7 +12,7 @@ describe('node-compat-table-testers', () => {
       }))
       .forEach((test) => {
         it(test.description, () => {
-          const instance = new Badger();
+          const instance = new Ratel();
           const source = `${test.source}\n`;
           if (RUST_BACKTRACE) {
             process.stdout.write(`\n${source}\n`);
@@ -25,3 +25,31 @@ describe('node-compat-table-testers', () => {
     describe(suiteName, suite);
   });
 });
+
+// Disabled (for now)
+
+// describe('can transform node-compat-table-testers', () => {
+//   const testers = requireRelativePath('contrib', 'node-compat-table-testers.json');
+//   Object.keys(testers).forEach((suiteName) => {
+//     const tests = testers[suiteName];
+//     const suite = () => {
+//       Object.keys(tests)
+//       .map((description) => ({
+//         description,
+//         source: tests[description]
+//       }))
+//       .forEach((test) => {
+//         it(test.description, () => {
+//           const instance = new Ratel();
+//           const source = `${test.source}\n`;
+//           if (RUST_BACKTRACE) {
+//             process.stdout.write(`\n${source}\n`);
+//           }
+//           instance.transform(source);
+//         });
+//       });
+//     };
+
+//     describe(suiteName, suite);
+//   });
+// });

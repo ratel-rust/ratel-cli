@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const argv = require('minimist')((process.argv.slice(2)));
-const Badger = require('..');
-const instance = new Badger();
+const Ratel = require('..');
+const instance = new Ratel();
 
 const options = {
   help: !!(argv.h || argv.help),
@@ -20,11 +20,16 @@ if (options.version) {
 }
 
 if (typeof options.file === 'string' || typeof options.string === 'string') {
-  const result = instance.process(options);
-  if (typeof result === 'string') {
-    process.stdout.write(result);
+  try {
+    const result = instance.process(options);
+    if (typeof result === 'string') {
+      process.stdout.write(result);
+    }
+    process.exit(0);
+  } catch (e) {
+    process.stdout.write(`Could not process the given input.\n\n${e.stack}`);
+    process.exit(1);
   }
-  process.exit(0);
 }
 
 process.stdout.write(instance.getUsage());

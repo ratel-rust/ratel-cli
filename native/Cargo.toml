@@ -1,6 +1,6 @@
 [package]
-name = "honey-badger-cli"
-version = "0.0.3"
+name = "ratel"
+version = "0.0.4"
 authors = ["Matthias Thoemmes <git@gmx.org>"]
 license = "MIT"
 
@@ -10,7 +10,7 @@ crate-type = ["dylib"]
 
 [dependencies]
 neon = "0.1"
-badger = "0.2.1"
+ratel = "0.2.3"
 
-#[dependencies.badger]
-#path = "../../HoneyBadger"
+#[dependencies.ratel]
+#path = "../../ratel-core"
