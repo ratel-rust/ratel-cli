@@ -6,13 +6,13 @@ const EXPECTED_AST = `[
     Expression {
         value: Binary {
             left: Literal(
-                LiteralInteger(
+                LiteralNumber(
                     2
                 )
             ),
             operator: Exponent,
             right: Literal(
-                LiteralInteger(
+                LiteralNumber(
                     2
                 )
             )
