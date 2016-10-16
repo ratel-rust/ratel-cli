@@ -2,18 +2,21 @@
 
 const EXPRESSION = '2**2;\n';
 const EXPECTED_OUTPUT = 'Math.pow(2,2);';
+
+// ratel returns LiteralFloat for integers
+
 const EXPECTED_AST = `[
     Expression {
         value: Binary {
             left: Literal(
-                LiteralNumber(
-                    2
+                LiteralFloat(
+                    "2"
                 )
             ),
             operator: Exponent,
             right: Literal(
-                LiteralNumber(
-                    2
+                LiteralFloat(
+                    "2"
                 )
             )
         }

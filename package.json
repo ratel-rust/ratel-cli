@@ -9,11 +9,11 @@
     "minimist": "^1.2.0",
     "mocha": "^3.1.2",
     "neon-cli": "^0.1.7",
-    "ratel-core": "file://../ratel-core",
     "semistandard": "^9.1.0"
   },
   "scripts": {
     "test": "mocha",
+    "install": "cd ratel-core/ffi && npm install --no-progress",
     "semistandard": "semistandard bin/ratel lib/**.js test/**.js"
   },
   "bin": {

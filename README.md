@@ -1,4 +1,8 @@
+![Ratel](http://maciej.codes/things/ratel-400.png)
+
 # ratel
+
+[![Travis CI](https://travis-ci.org/ratel-rust/ratel-cli.svg)](https://travis-ci.org/ratel-rust/ratel-cli)
 
 A command-line interface for [ratel-core](https://github.com/ratel-rust/ratel-core), a JavaScript compiler core written in Rust.
 
