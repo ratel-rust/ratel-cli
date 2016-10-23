@@ -4,3 +4,4 @@ native/index.node
 **/node_modules
 **/.DS_Store
 fails
+results

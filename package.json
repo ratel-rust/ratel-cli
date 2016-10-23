@@ -1,11 +1,12 @@
 {
   "name": "ratel",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A command-line interface for ratel-core, a JavaScript compiler core in Rust.",
   "main": "lib/index.js",
   "author": "Matthias Thoemmes <git@gmx.org>",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.1.2",
     "minimist": "^1.2.0",
     "mocha": "^3.1.2",
     "neon-cli": "^0.1.7",

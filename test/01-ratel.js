@@ -3,19 +3,20 @@
 const EXPRESSION = '2**2;\n';
 const EXPECTED_OUTPUT = 'Math.pow(2,2);';
 
-// ratel returns LiteralFloat for integers
+// ratel returns Number for integers
 
 const EXPECTED_AST = `[
     Expression {
         value: Binary {
+            parenthesized: false,
+            operator: Exponent,
             left: Literal(
-                LiteralFloat(
+                Number(
                     "2"
                 )
             ),
-            operator: Exponent,
             right: Literal(
-                LiteralFloat(
+                Number(
                     "2"
                 )
             )
@@ -48,5 +49,30 @@ describe('Ratel', () => {
     const result = instance.transform(EXPRESSION, true);
     assert.equal(typeof result, 'string', 'result is a string');
     assert.equal(result, EXPECTED_OUTPUT);
+  });
+
+  describe('process', () => {
+    it('transforms a string', () => {
+      const instance = new Ratel();
+      const options = {
+        string: 'const a = (b) => { return 2 };',
+        pretty: false
+      };
+      const result = instance.process(options);
+      assert.equal(typeof result, 'string', 'result is a string');
+      assert.equal(result, 'var a=function(b){return 2;};');
+    });
+
+    it('transforms a string, pretty formaat', () => {
+      const instance = new Ratel();
+      const options = {
+        string: 'const a = (b) => { return 2 };',
+        pretty: true
+      };
+      const result = instance.process(options);
+      const expected = `var a = function (b) {\n    return 2;\n};\n`;
+      assert.equal(typeof result, 'string', 'result is a string');
+      assert.equal(result, expected);
+    });
   });
 });

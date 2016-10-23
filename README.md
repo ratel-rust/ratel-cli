@@ -4,7 +4,7 @@
 
 [![Travis CI](https://travis-ci.org/ratel-rust/ratel-cli.svg)](https://travis-ci.org/ratel-rust/ratel-cli)
 
-A command-line interface for [ratel-core](https://github.com/ratel-rust/ratel-core), a JavaScript compiler core written in Rust.
+A command-line interface for [ratel-core](https://github.com/ratel-rust/ratel-core), a JavaScript to JavaScript compiler written in Rust.
 
 ## Usage
 
@@ -29,9 +29,11 @@ You can install the executable globally from NPM using
 ``npm install -g ratel`` or by executing ``npm link`` in the project
 directory.
 
-## Running the tests
+## Development
 
-Recompiles ratel and runs all tests using [Mocha](https://mochajs.org).
+### Running the tests
+
+Runs all tests using [Mocha](https://mochajs.org).
 
 The test suite is using [node.green](http://node.green/)'s compat-table which
 features ES2015, ES2016 and ES2017 examples.
@@ -40,17 +42,19 @@ features ES2015, ES2016 and ES2017 examples.
 $ npm test
 ````
 
-## Development
+Additionally, you can execute ``make`` in the project directory in order to
+validate the source code. Please also refer to the ``scripts`` section of
+``package.json`` for further options.
 
-Execute ``make`` in the project directory. Please also refer to the scripts
-section of ``package.json``.
+Currently, ratel-core is provided as git submodule for development purposes.
 
-In case you want to work on a local copy of [ratel-core](https://github.com/ratel-rust),
-add the following lines to ``native/Cargo.toml``:
+### compat-table tests
 
-````
-[dependencies.ratel]
-path = "../../ratel"
+Run the following command to execute all bundled tests and write the original
+sources, errors and results to the ``results`` directory:
+
+````bash
+$ node write_errors.js
 ````
 
 ## API
@@ -97,6 +101,13 @@ When *minify* is set to true, the output string will be minified.
 Returns a *String* with the AST of the given input string.
 
 ## Changelog
+
+0.0.5
+
+  - Updating tests
+  - Removing compat-table transform tests (for now)
+  - Adding tests for transform, pretty printing
+  - Writing original sources, errors and results in write_errors
 
 0.0.4
 
