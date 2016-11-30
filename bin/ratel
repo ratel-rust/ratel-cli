@@ -23,7 +23,7 @@ if (typeof options.file === 'string' || typeof options.string === 'string') {
   try {
     const result = instance.process(options);
     if (typeof result === 'string') {
-      process.stdout.write(result);
+      process.stdout.write(`${result}\n`);
     }
     process.exit(0);
   } catch (e) {

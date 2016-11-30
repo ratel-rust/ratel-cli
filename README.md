@@ -102,6 +102,10 @@ Returns a *String* with the AST of the given input string.
 
 ## Changelog
 
+0.0.6
+
+  - Ensuring trailing newlines
+
 0.0.5
 
   - Updating tests

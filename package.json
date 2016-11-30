@@ -1,6 +1,6 @@
 {
   "name": "ratel",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A command-line interface for ratel-core, a JavaScript compiler core in Rust.",
   "main": "lib/index.js",
   "author": "Matthias Thoemmes <git@gmx.org>",
