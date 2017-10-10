@@ -8,12 +8,12 @@
   "dependencies": {
     "colors": "^1.1.2",
     "minimist": "^1.2.0",
-    "mocha": "^3.1.2",
-    "neon-cli": "^0.1.7",
-    "semistandard": "^9.1.0"
+    "mocha": "^4.0.1",
+    "neon-cli": "^0.1.20",
+    "semistandard": "^11.0.0"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha ./test/**/*.js",
     "install": "cd ratel-core/ffi && npm install --no-progress",
     "semistandard": "semistandard bin/ratel lib/**.js test/**.js"
   },
@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.6.2"
   }
 }

@@ -28,4 +28,4 @@ matrix:
 os:
   - linux
 
-script: mocha
+script: npm test
