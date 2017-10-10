@@ -1,3 +1,5 @@
 [submodule "ratel-core"]
 	path = ratel-core
 	url = https://github.com/ratel-rust/ratel-core
+[submodule]
+	ratel-core = rewrite
